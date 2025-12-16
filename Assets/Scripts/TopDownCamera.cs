@@ -29,12 +29,27 @@ public class TopDownCamera : MonoBehaviour
         if (TopDownMovementHandle.IsMovingLeft == true)
         {
             xoffset = -2f;
+            zoffset = 10f;
         }
 		
         if (TopDownMovementHandle.IsMovingRight == true)
         {
             xoffset = 2f;
+            zoffset = 10f;
         }
+        
+        if (TopDownMovementHandle.IsMovingUp == true)
+        {
+            zoffset = 8f;
+            xoffset = 0f;
+        }
+        
+        if (TopDownMovementHandle.IsMovingDown == true)
+        {
+            zoffset = 12f;
+            xoffset = 0f;
+        }
+        
 
         Vector3 pos = new Vector3();
         pos.x = player.position.x + xoffset;

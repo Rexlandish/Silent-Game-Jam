@@ -8,10 +8,7 @@ using UnityEngine.SceneManagement;
 public class SpriteMovement : MonoBehaviour
 {
     public float movementSpeed;
-    public GameObject camera;
-    public Transform ccamera;
     public float slowDownAmount = 1;
-    public bool shouldShake = true;
 
     public Animator anim;
 
@@ -32,6 +29,8 @@ public class SpriteMovement : MonoBehaviour
     
     public bool IsMovingLeft = false;
     public bool IsMovingRight = false;
+    public bool IsMovingUp = false;
+    public bool IsMovingDown = false;
 
     private void FixedUpdate()
     {
@@ -65,19 +64,10 @@ public class SpriteMovement : MonoBehaviour
     void HandleSpriteFlip()
     {
         float VerticalAxis = Input.GetAxis("Vertical");
-        float HorizontallAxis = Input.GetAxis("Horizontal");
+        float HorizontalAxis = Input.GetAxis("Horizontal");
         
-        if (!spriteRenderer.flipX && HorizontallAxis < 0)
-        {
-            spriteRenderer.flipX = true;
-            IsMovingLeft = true;
-            IsMovingRight = false;
-        } else if (spriteRenderer.flipX && HorizontallAxis > 0)
-        {
-            spriteRenderer.flipX = false;
-            IsMovingLeft = false;
-            IsMovingRight = true;
-        }
+        if (HorizontalAxis != 0)
+            spriteRenderer.flipX = HorizontalAxis < 0;
     }
 
     List<Sprite> GetSpriteDirection()
@@ -128,6 +118,11 @@ public class SpriteMovement : MonoBehaviour
     {
         HandleSpriteFlip();
         SetSprite();
+
+        IsMovingRight = Input.GetKey(KeyCode.D);
+        IsMovingLeft  = Input.GetKey(KeyCode.A);
+        IsMovingUp    = Input.GetKey(KeyCode.W);
+        IsMovingDown  = Input.GetKey(KeyCode.S);
 
         void SetSprite()
         {
