@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25322559734013744b8c941fe1dcdc2c, type: 3}
+  m_Name: CharacterDragon
+  m_EditorClassIdentifier: 
+  body: {fileID: 21300000, guid: 03995c9a1cd3c14499d1b20edf9f6227, type: 3}
+  handSprites:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 579163758, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    - Key: 1
+      Value: {fileID: -881491527, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    - Key: 2
+      Value: {fileID: -339069786, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    - Key: 3
+      Value: {fileID: -561795901, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    - Key: 4
+      Value: {fileID: -64678931, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    - Key: 5
+      Value: {fileID: 85489617, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+  responses:
+    _serializedList:
+    - Key: victim?
+      Value: 0200000009000000070000000900000004000000
+    - Key: murder?
+      Value: 050000000600000009000000

@@ -1,0 +1,83 @@
+using AYellowpaper.SerializedCollections;
+using System;
+using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using static Gesture;
+
+public class GameManager : MonoBehaviour
+{
+
+    [SerializedDictionary("Enum", "Player Guess")]
+    public SerializedDictionary<GestureEnum, string> playerTranslations = new();
+
+    public List<GestureEnum> newGestures = new();
+
+    public static GameManager Instance;
+
+    // Move all the new words into playerTranslations with empty strings
+    public void SeenNewWords()
+    {
+        foreach (GestureEnum gesture in newGestures)
+        {
+            if (!playerTranslations.ContainsKey(gesture))
+            {
+                playerTranslations[gesture] = "";
+            }
+            else
+            {
+                Debug.LogWarning("Gesture already exists in player translations, this shouldn't happen! Check if this is being filtered out by GameManager.CheckIfNewWord: " + gesture.ToString());
+            }
+        }
+
+        newGestures.Clear();
+    }
+
+    // Is called by Character if any new words are performed
+    public void CheckIfNewWord(GestureEnum gesture)
+    {
+        if (!newGestures.Contains(gesture) && gesture != GestureEnum.Rest)
+        {
+            newGestures.Add(gesture);
+        }
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        //CompletePlayerTranslations();
+    }
+
+    // Don't do this!! 
+    void CompletePlayerTranslations()
+    {
+        foreach (GestureEnum gestureEnum in Enum.GetValues(typeof(GestureEnum)))
+        {
+            if (!playerTranslations.ContainsKey(gestureEnum))
+            {
+                playerTranslations[gestureEnum] = "";
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
