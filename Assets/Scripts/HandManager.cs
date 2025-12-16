@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class HandManager : MonoBehaviour
 {
 
-    public SerializedDictionary<string, Sprite> handPositions;
+    public SerializedDictionary<HandSign.HandShape, Sprite> handPositions;
 
     public Vector2 targetPosition;
     public float targetRotation;
@@ -39,7 +39,9 @@ public class HandManager : MonoBehaviour
     {
         if (hideInitially)
         {
+            currentOpacity = 0;
             targetOpacity = 0;
+
             Perform(null);
         }
 
@@ -102,7 +104,7 @@ public class HandManager : MonoBehaviour
             targetOpacity = 1;
         }
 
-        sr.sprite = handPositions[handSign.name];
+        sr.sprite = handPositions[handSign.shape];
         isLeftHand = handSign.isLeftHand;
         targetPosition = handSign.position;
         targetRotation = handSign.rotation;

@@ -8,7 +8,7 @@ public class Gesture
         No,
         Dragon,
         Cat,
-        Murderer,
+        Murder,
         Victim,
         You,
         Me,

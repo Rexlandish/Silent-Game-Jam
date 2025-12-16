@@ -2,7 +2,7 @@ using UnityEngine;
 using AYellowpaper.SerializedCollections;
 using static Gesture.GestureEnum;
 using static Util;
-
+using static HandSign.HandShape;
 public class GestureLibrary {
     [SerializedDictionary("Gesture Name", "Gesture")]
     public static SerializedDictionary<Gesture.GestureEnum, Gesture> gestureLibrary = new()
@@ -12,14 +12,14 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "point-front",
+                        PointFront,
                         new(-1.5f, 0.5f),
                         0f,
                         false,
                         null
                         ),
                     new HandSign(
-                        "point-front",
+                        PointFront,
                         new(1.5f, 0.5f),
                         0f,
                         true,
@@ -33,14 +33,14 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "point-back",
+                        PointBack,
                         new(-1.5f, -0.5f),
                         180f,
                         false,
                         null
                         ),
                     new HandSign(
-                        "point-back",
+                        PointBack,
                         new(1.5f, -0.5f),
                         -180f,
                         true,
@@ -54,14 +54,14 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "peace-front",
+                        PeaceFront,
                         new(-2f, 0f),
                         0f,
                         false,
                         null
                         ),
                     new HandSign(
-                        "peace-front",
+                        PeaceFront,
                         new(2f, 0f),
                         0f,
                         true,
@@ -76,7 +76,7 @@ public class GestureLibrary {
                 {
                     null,
                     new HandSign(
-                        "palm-front",
+                        PalmFront,
                         new(1f, 0f),
                         0f,
                         true,
@@ -94,7 +94,7 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "index-front",
+                        Index,
                         new(-1f, 3f),
                         0f,
                         false,
@@ -105,7 +105,7 @@ public class GestureLibrary {
                             )
                         ),
                     new HandSign(
-                        "index-front",
+                        Index,
                         new(1f, 3f),
                         0f,
                         true,
@@ -123,7 +123,7 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "peace-back",
+                        PeaceBack,
                         new(-1.5f, 1f),
                         -90f,
                         false,
@@ -134,7 +134,7 @@ public class GestureLibrary {
                             )
                         ),
                     new HandSign(
-                        "peace-back",
+                        PeaceBack,
                         new(1.5f, 1f),
                         90f,
                         true,
@@ -148,11 +148,11 @@ public class GestureLibrary {
             )
         },
         {
-            Murderer, new Gesture(
+            Murder, new Gesture(
                 new[]
                 {
                     new HandSign(
-                        "peace-back",
+                        PeaceBack,
                         new(0f, 1f),
                         -60f,
                         false,
@@ -173,7 +173,7 @@ public class GestureLibrary {
                     null,
 
                     new HandSign(
-                        "palm-front",
+                        PalmFront,
                         new(0f, 1f),
                         60f,
                         false,
@@ -191,7 +191,7 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "point-front",
+                        PointFront,
                         new(-2f, 0f),
                         30f,
                         false,
@@ -206,7 +206,7 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "point-back",
+                        PointBack,
                         new(-1f, 0f),
                         -30f,
                         false,
@@ -225,14 +225,14 @@ public class GestureLibrary {
                 new[]
                 {
                     new HandSign(
-                        "index-front",
+                        Index,
                         new(-0.5f, 0f),
                         -30f,
                         false,
                         null
                         ),
                     new HandSign(
-                        "index-front",
+                        Index,
                         new(0.5f, 0f),
                         30f,
                         true,
