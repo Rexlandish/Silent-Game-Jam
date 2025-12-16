@@ -20,6 +20,7 @@ public class HandManager : MonoBehaviour
 
     [Space]
     public bool initialTransformIsTargetPosition;
+    public bool hideInitially;
 
     SpriteRenderer sr;
 
@@ -36,6 +37,12 @@ public class HandManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (hideInitially)
+        {
+            targetOpacity = 0;
+            Perform(null);
+        }
+
         perlinNoiseOffset = new Vector2(Random.Range(0f, 100f), Random.Range(0f, 100f));
         if (initialTransformIsTargetPosition) targetPosition = transform.position;
     }
@@ -48,6 +55,9 @@ public class HandManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update opacity
+        currentOpacity = Mathf.Lerp(currentOpacity, targetOpacity, 10f * Time.deltaTime);
+        sr.color = new Color(1f, 1f, 1f, currentOpacity);
 
         movementPositionOffset = movementFunction?.Invoke(Time.time) ?? Vector2.zero;
 
@@ -70,8 +80,28 @@ public class HandManager : MonoBehaviour
         );
     }
 
-    public void Perform(HandSign handSign)
+    float targetOpacity = 1;
+    float currentOpacity = 1;
+    public void Perform(HandSign? handSign)
     {
+        if (handSign == null)
+        {
+            targetOpacity = 0;
+            movementFunction = null;
+
+            // Set position to resting
+            targetPosition = transform.localPosition;
+            targetPosition.y = 0;
+
+            movementFunction = null;
+
+            return;
+        }
+        else
+        {
+            targetOpacity = 1;
+        }
+
         sr.sprite = handPositions[handSign.name];
         isLeftHand = handSign.isLeftHand;
         targetPosition = handSign.position;
