@@ -67,7 +67,15 @@ public class Character : MonoBehaviour
         currentQuestion = question;
         buttonContainer.SetActive(false);
         isPerforming = true;
-        DoNextGesture();
+        DoNextGestureHSM();
+    }
+
+    void PerformNextGesture()
+    {
+        // Go to next response in loop
+        handSignManager.DoHandSign(responses[currentQuestion][currentIndex]);
+        currentIndex += 1;
+
     }
 
     void StopPerformingGesture()
@@ -80,16 +88,11 @@ public class Character : MonoBehaviour
 
     }
 
-    void DoNextGesture()
+    void DoNextGestureHSM() // HSM: Hand Sign Manager
     {
-
         if (currentIndex < responses[currentQuestion].Length)
         {
-            // Go to next response in loop
-            handSignManager.DoHandSign(responses[currentQuestion][currentIndex]);
-            currentIndex += 1;
-
-
+            PerformNextGesture();
         }
         else
         {
@@ -99,12 +102,14 @@ public class Character : MonoBehaviour
 
     void CheckForGestureAdvance()
     {
+        if (GameManager.Instance.UIBlockingInput) return;
+
         if (
             isPerforming &&
             (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             )
         {
-            DoNextGesture();
+            DoNextGestureHSM();
         }
     }
 

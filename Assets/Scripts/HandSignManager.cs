@@ -1,6 +1,7 @@
 using AYellowpaper.SerializedCollections;
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Gesture;
 using static Util;
@@ -17,7 +18,7 @@ public class HandSignManager : MonoBehaviour
     public string defaultTranslation = "?";
 
     GestureEnum currentGesture;
-
+    bool isMouseOver;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,12 +29,18 @@ public class HandSignManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        translationText.enabled = isMouseOver && currentGesture != GestureEnum.Rest;
     }
 
 
-    private void OnMouseEnter()
+    private void OnMouseEnter() // Accessed by character
     {
+        isMouseOver = true;
+    }
+
+    public void UpdateUserTranslationText()
+    {
+
         // Put this in it's own class later to allow for fancy visuals etc.
 
         // Don't show the translation if the enum is REST
@@ -43,7 +50,17 @@ public class HandSignManager : MonoBehaviour
             return;
         }
 
-        string translation = GameManager.Instance.playerTranslations[currentGesture];
+
+        // If a player translation doesn't exist in the gamemanager translations dictionary, use the default translation
+        string translation;
+        if (GameManager.Instance.playerTranslations.ContainsKey(currentGesture))
+        {
+            translation = GameManager.Instance.playerTranslations[currentGesture];
+        }
+        else
+        {
+            translation = "";
+        }
 
         if (translation == "")
         {
@@ -55,6 +72,11 @@ public class HandSignManager : MonoBehaviour
     }
 
     private void OnMouseExit()
+    {
+        isMouseOver = false;
+    }
+
+    public void HideUserTranslation()
     {
         // Put this in it's own class later to allow for fancy visuals etc.
         translationText.alpha = 0;
@@ -83,5 +105,7 @@ public class HandSignManager : MonoBehaviour
         currentGesture = gestureEnum;
         Gesture gesture = GestureLibrary.gestureLibrary[gestureEnum];
         DoHandSign(gesture);
+
+        UpdateUserTranslationText(); // This is a little inefficient as it reads from a variable in memory instead of passing it directly, but it's fine for now
     }
 }

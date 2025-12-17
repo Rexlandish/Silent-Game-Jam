@@ -9,10 +9,15 @@ using static Gesture;
 public class GameManager : MonoBehaviour
 {
 
+    [SerializedDictionary("Enum", "Sign Sprite")]
+    public SerializedDictionary<GestureEnum, Sprite> signSprites = new(); // Set in inspector in a prefab
+
     [SerializedDictionary("Enum", "Player Guess")]
     public SerializedDictionary<GestureEnum, string> playerTranslations = new();
 
     public List<GestureEnum> newGestures = new();
+
+    public bool UIBlockingInput = false;
 
     public static GameManager Instance;
 
@@ -37,7 +42,9 @@ public class GameManager : MonoBehaviour
     // Is called by Character if any new words are performed
     public void CheckIfNewWord(GestureEnum gesture)
     {
-        if (!newGestures.Contains(gesture) && gesture != GestureEnum.Rest)
+        // If the player hasn't translated this gesture yet, and it's not already in newGestures, and it's not Rest
+        // Add it to new gestures
+        if (!playerTranslations.ContainsKey(gesture) && !newGestures.Contains(gesture) && gesture != GestureEnum.Rest)
         {
             newGestures.Add(gesture);
         }
