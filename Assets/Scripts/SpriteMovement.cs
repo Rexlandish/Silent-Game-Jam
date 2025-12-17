@@ -10,8 +10,6 @@ public class SpriteMovement : MonoBehaviour
     public float movementSpeed;
     public float slowDownAmount = 1;
 
-    public Animator anim;
-
     Vector3 startPosition;
     float initialDuration;
     
@@ -42,22 +40,6 @@ public class SpriteMovement : MonoBehaviour
         //player movement
         float VerticalAxis = Input.GetAxis("Vertical");
         float HorizontallAxis = Input.GetAxis("Horizontal");
-
-        if (Input.GetKey(KeyCode.W))
-            this.anim.SetFloat("Vertical", VerticalAxis);
-        this.anim.SetFloat("Horizontal", HorizontallAxis);
-
-        if (Input.GetKey(KeyCode.S))
-            this.anim.SetFloat("Vertical", VerticalAxis);
-        this.anim.SetFloat("Horizontal", HorizontallAxis);
-
-        if (Input.GetKey(KeyCode.D))
-            this.anim.SetFloat("Vertical", VerticalAxis);
-        this.anim.SetFloat("Horizontal", HorizontallAxis);
-
-        if (Input.GetKey(KeyCode.A))
-            this.anim.SetFloat("Vertical", VerticalAxis);
-        this.anim.SetFloat("Horizontal", HorizontallAxis);
 
     }
 
