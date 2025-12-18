@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.stgame.multiplespriteextractor": "https://github.com/nmtoan91/Unity-Plugin-Extract-Multiple-Sprite.git?path=/Assets/MultiSpriteExtractTool",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.5",
     "com.unity.collab-proxy": "2.10.2",
