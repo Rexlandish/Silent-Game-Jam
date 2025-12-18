@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterObject : ScriptableObject
 {
     public Sprite body;
+    public Color bodyColor;
     [Space]
 
     [SerializedDictionary("Handshape", "Sprite")]

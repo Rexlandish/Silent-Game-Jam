@@ -35,7 +35,7 @@ public class Character : MonoBehaviour
         responses = CO.responses;
 
         characterSprite.sprite = CO.body;
-        characterSprite.color = CO.exteriorColor;
+        characterSprite.color = CO.bodyColor;
 
         handSignManager.hand1.exteriorColor = CO.exteriorColor;
 

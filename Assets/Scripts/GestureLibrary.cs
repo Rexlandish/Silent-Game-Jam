@@ -176,7 +176,7 @@ public class GestureLibrary {
                         PalmFront,
                         new(0f, 1f),
                         60f,
-                        false,
+                        true,
                         Oscillate(
                             new Vector2(-0.5f, -1f),
                             new Vector2(0.5f, 1f),
