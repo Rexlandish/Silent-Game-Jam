@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a593b97514b24df44ae1665a50a6e2f9, type: 3}
+  m_Name: IndexBackClaw
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: cdf12b9061affa44e883af663b6e5889, type: 3}
+  exteriorMask: {fileID: 2800000, guid: 394f995802c884147aee85ff888f650e, type: 3}
+  palmMask: {fileID: 2800000, guid: 98bb6b291a8e84449ba93c7d7c6caa6c, type: 3}
+  clawMask: {fileID: 2800000, guid: 3ab802fb9c618c64687029249de42518, type: 3}

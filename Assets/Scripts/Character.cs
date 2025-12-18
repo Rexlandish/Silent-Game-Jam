@@ -25,12 +25,19 @@ public class Character : MonoBehaviour
     
     public void Load(CharacterObject CO)
     {
+        // Don't reach through handSignManager to set hand positions,
+        // add a function to HandSignManager later ideally
+        handSignManager.SetHandColours(CO);
+
         handSignManager.hand1.handPositions = CO.handSprites;
         handSignManager.hand2.handPositions = CO.handSprites;
 
         responses = CO.responses;
 
         characterSprite.sprite = CO.body;
+        characterSprite.color = CO.exteriorColor;
+
+        handSignManager.hand1.exteriorColor = CO.exteriorColor;
 
         // Spawn buttons for each response
         foreach (var key in responses.Keys)

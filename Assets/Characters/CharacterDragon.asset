@@ -16,17 +16,20 @@ MonoBehaviour:
   handSprites:
     _serializedList:
     - Key: 0
-      Value: {fileID: 579163758, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+      Value: {fileID: 11400000, guid: ca1328dc20b17d742a5fede90c27127e, type: 2}
     - Key: 1
-      Value: {fileID: -881491527, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+      Value: {fileID: 11400000, guid: 4ce482becf5a9e64786a3fdc4533c375, type: 2}
     - Key: 2
-      Value: {fileID: -339069786, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+      Value: {fileID: 11400000, guid: 028605a065ee17e4cb10608eceade30f, type: 2}
     - Key: 3
-      Value: {fileID: -561795901, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+      Value: {fileID: 11400000, guid: 3a46232c9229ab14aac8f82d5778985c, type: 2}
     - Key: 4
-      Value: {fileID: -64678931, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+      Value: {fileID: 11400000, guid: 157aebe9cabc7b740b8e4e8fb04d98f3, type: 2}
     - Key: 5
-      Value: {fileID: 85489617, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+      Value: {fileID: 11400000, guid: d7d7b8731fc9d6e49a11434ff8f9cbd9, type: 2}
+  exteriorColor: {r: 0.5989194, g: 0, b: 1, a: 1}
+  palmColor: {r: 0.8584906, g: 0.852869, b: 0.61957103, a: 1}
+  clawColor: {r: 1, g: 1, b: 1, a: 1}
   responses:
     _serializedList:
     - Key: victim?

@@ -11,6 +11,8 @@ public class HandSignManager : MonoBehaviour
     public HandManager hand1;
     public HandManager hand2;
 
+
+    // List of gestures for the character to progress through
     Gesture[] gestureList;
 
     public TextMeshProUGUI translationText;
@@ -23,6 +25,13 @@ public class HandSignManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+    }
+
+    public void SetHandColours(CharacterObject CO)
+    {
+        hand1.SetHandColors(CO);
+        hand2.SetHandColors(CO);
 
     }
 

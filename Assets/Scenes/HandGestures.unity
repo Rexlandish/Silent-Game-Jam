@@ -270,6 +270,7 @@ MonoBehaviour:
     _serializedList: []
   newGestures: 
   UIBlockingInput: 0
+  handMaterial: {fileID: 2100000, guid: d985e2dae56c20246adaa92ce1c77275, type: 2}
 --- !u!1 &200503777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,19 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPositions:
-    _serializedList:
-    - Key: 0
-      Value: {fileID: 579163758, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 1
-      Value: {fileID: -881491527, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 2
-      Value: {fileID: -339069786, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 3
-      Value: {fileID: -561795901, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 4
-      Value: {fileID: -64678931, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 5
-      Value: {fileID: 85489617, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    _serializedList: []
   targetPosition: {x: 0, y: 0}
   targetRotation: 0
   offsetStrength: 0.125
@@ -1169,6 +1158,9 @@ MonoBehaviour:
   isLeftHand: 0
   initialTransformIsTargetPosition: 0
   hideInitially: 1
+  exteriorColor: {r: 0, g: 0, b: 0, a: 0}
+  palmColor: {r: 0, g: 0, b: 0, a: 0}
+  clawColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &358191783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1470,19 +1462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPositions:
-    _serializedList:
-    - Key: 0
-      Value: {fileID: 579163758, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 0
-      Value: {fileID: -881491527, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 0
-      Value: {fileID: -339069786, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 0
-      Value: {fileID: -561795901, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 0
-      Value: {fileID: -64678931, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
-    - Key: 0
-      Value: {fileID: 85489617, guid: 6aa1ddf6e6d1a74418c8c4b916f323f1, type: 3}
+    _serializedList: []
   targetPosition: {x: 0, y: 0}
   targetRotation: 0
   offsetStrength: 0.125
@@ -1491,6 +1471,9 @@ MonoBehaviour:
   isLeftHand: 0
   initialTransformIsTargetPosition: 0
   hideInitially: 1
+  exteriorColor: {r: 0, g: 0, b: 0, a: 0}
+  palmColor: {r: 0, g: 0, b: 0, a: 0}
+  clawColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &465714682
 SpriteRenderer:
   m_ObjectHideFlags: 0

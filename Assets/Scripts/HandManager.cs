@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class HandManager : MonoBehaviour
 {
 
-    public SerializedDictionary<HandSign.HandShape, Sprite> handPositions;
+    public SerializedDictionary<HandSign.HandShape, HandSignSprite> handPositions = new();
 
     public Vector2 targetPosition;
     public float targetRotation;
@@ -22,16 +22,35 @@ public class HandManager : MonoBehaviour
     public bool initialTransformIsTargetPosition;
     public bool hideInitially;
 
+    public Color exteriorColor;
+    public Color palmColor;
+    public Color clawColor;
+
     SpriteRenderer sr;
 
     Vector2 movementPositionOffset;
     Vector2 positionNoise;
     Vector2 perlinNoiseOffset;
 
+    Renderer r;
     
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        r = sr.GetComponent<Renderer>();
+        r.SetMaterials(new() { GameManager.Instance.handMaterial });
+    }
+
+    public void SetHandColors(CharacterObject CO)
+    {
+        palmColor = CO.palmColor;
+        clawColor = CO.clawColor;
+        exteriorColor = CO.exteriorColor;
+
+        r.material.SetColor("_ExteriorColor", exteriorColor);
+        r.material.SetColor("_PalmColor", palmColor);
+        r.material.SetColor("_ClawColor", clawColor);
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,6 +66,14 @@ public class HandManager : MonoBehaviour
 
         perlinNoiseOffset = new Vector2(Random.Range(0f, 100f), Random.Range(0f, 100f));
         if (initialTransformIsTargetPosition) targetPosition = transform.position;
+
+        var props = r.material.GetPropertyNames(MaterialPropertyType.Vector);
+
+        foreach (var p in props)
+        {
+            print(p);
+        }
+
     }
 
     public void SetSprite(Sprite sprite)
@@ -63,7 +90,7 @@ public class HandManager : MonoBehaviour
 
         movementPositionOffset = movementFunction?.Invoke(Time.time) ?? Vector2.zero;
 
-        sr.flipX = isLeftHand;
+        sr.flipX = !isLeftHand;
         positionNoise = new Vector2(
             Mathf.PerlinNoise(Time.time + perlinNoiseOffset.x, 0f),
             Mathf.PerlinNoise(0f, Time.time + perlinNoiseOffset.y)
@@ -104,7 +131,17 @@ public class HandManager : MonoBehaviour
             targetOpacity = 1;
         }
 
-        sr.sprite = handPositions[handSign.shape];
+        var handSprite = handPositions[handSign.shape];
+
+
+        print(handSprite.exteriorMask);
+
+        sr.sprite = handSprite.sprite;
+        //r.material.SetTexture("_MainTex", handSprite.sprite.texture);
+        r.material.SetTexture("_Exterior", handSprite.exteriorMask);
+        r.material.SetTexture("_Palm", handSprite.palmMask);
+        r.material.SetTexture("_Claws", handSprite.clawMask);
+
         isLeftHand = handSign.isLeftHand;
         targetPosition = handSign.position;
         targetRotation = handSign.rotation;

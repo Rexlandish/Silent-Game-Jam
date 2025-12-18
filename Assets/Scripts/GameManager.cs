@@ -18,8 +18,10 @@ public class GameManager : MonoBehaviour
     public List<GestureEnum> newGestures = new();
 
     public bool UIBlockingInput = false;
+    public Material handMaterial;
 
     public static GameManager Instance;
+    
 
     // Move all the new words into playerTranslations with empty strings
     public void SeenNewWords()
