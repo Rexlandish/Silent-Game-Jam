@@ -25,12 +25,19 @@ public class Character : MonoBehaviour
     
     public void Load(CharacterObject CO)
     {
+        // Don't reach through handSignManager to set hand positions,
+        // add a function to HandSignManager later ideally
+        handSignManager.SetHandColours(CO);
+
         handSignManager.hand1.handPositions = CO.handSprites;
         handSignManager.hand2.handPositions = CO.handSprites;
 
         responses = CO.responses;
 
         characterSprite.sprite = CO.body;
+        characterSprite.color = CO.bodyColor;
+
+        handSignManager.hand1.exteriorColor = CO.exteriorColor;
 
         // Spawn buttons for each response
         foreach (var key in responses.Keys)
@@ -67,7 +74,15 @@ public class Character : MonoBehaviour
         currentQuestion = question;
         buttonContainer.SetActive(false);
         isPerforming = true;
-        DoNextGesture();
+        DoNextGestureHSM();
+    }
+
+    void PerformNextGesture()
+    {
+        // Go to next response in loop
+        handSignManager.DoHandSign(responses[currentQuestion][currentIndex]);
+        currentIndex += 1;
+
     }
 
     void StopPerformingGesture()
@@ -80,16 +95,11 @@ public class Character : MonoBehaviour
 
     }
 
-    void DoNextGesture()
+    void DoNextGestureHSM() // HSM: Hand Sign Manager
     {
-
         if (currentIndex < responses[currentQuestion].Length)
         {
-            // Go to next response in loop
-            handSignManager.DoHandSign(responses[currentQuestion][currentIndex]);
-            currentIndex += 1;
-
-
+            PerformNextGesture();
         }
         else
         {
@@ -99,12 +109,14 @@ public class Character : MonoBehaviour
 
     void CheckForGestureAdvance()
     {
+        if (GameManager.Instance.UIBlockingInput) return;
+
         if (
             isPerforming &&
             (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             )
         {
-            DoNextGesture();
+            DoNextGestureHSM();
         }
     }
 

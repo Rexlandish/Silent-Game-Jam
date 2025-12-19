@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a593b97514b24df44ae1665a50a6e2f9, type: 3}
+  m_Name: PeaceFrontClaw
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: eb9f5c71663bbb641bc106eea891eec0, type: 3}
+  exteriorMask: {fileID: 2800000, guid: 66db4e5e822075241a475d3a6f9a22fe, type: 3}
+  palmMask: {fileID: 2800000, guid: cb3b18b1f63678549bae66181560a035, type: 3}
+  clawMask: {fileID: 2800000, guid: 1cb868e61ba0d424cb6c2ac27838f1b6, type: 3}

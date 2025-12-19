@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement style="flex-grow: 0; flex-direction: column; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; align-items: center;">
+        <engine:VisualElement name="Image" focusable="false" style="flex-grow: 1; width: 80%; flex-direction: column;" />
+        <engine:TextField placeholder-text="..." name="UserTranslation" max-length="20" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; align-self: center; justify-content: flex-start; width: 100%;" />
+    </engine:VisualElement>
+</engine:UXML>
