@@ -69,10 +69,6 @@ public class HandManager : MonoBehaviour
 
         var props = r.material.GetPropertyNames(MaterialPropertyType.Vector);
 
-        foreach (var p in props)
-        {
-            print(p);
-        }
 
     }
 

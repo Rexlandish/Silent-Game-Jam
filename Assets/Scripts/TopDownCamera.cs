@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class TopDownCamera : MonoBehaviour
@@ -17,15 +18,21 @@ public class TopDownCamera : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    Vector3 targetPosition;
+    CinemachineCamera CC;
+
     void Start()
     {
-        TopDownMovementHandle = PlayerObj.GetComponent<SpriteMovement>();
+        CC = GetComponent<CinemachineCamera>();
+        targetPosition = transform.position;
+
+        transform.LookAt(player);
     }
 
     //Methods
     void Update()
     {
-
+        /*
         if (TopDownMovementHandle.IsMovingLeft == true)
         {
             xoffset = -2f;
@@ -49,13 +56,23 @@ public class TopDownCamera : MonoBehaviour
             zoffset = 12f;
             xoffset = 0f;
         }
+        */
         
 
         Vector3 pos = new Vector3();
         pos.x = player.position.x + xoffset;
         pos.z = player.position.z - zoffset;
         pos.y = player.position.y + height;
-        transform.position = Vector3.SmoothDamp(transform.position, pos, ref velocity, smooth);
+
+        //targetPosition = Vector3.SmoothDamp(targetPosition, pos, ref velocity, smooth);
+
+
+        targetPosition = pos;
+
+        transform.LookAt(player);
+        CC.ForceCameraPosition(targetPosition, transform.rotation);
+
+
     }
 
 }

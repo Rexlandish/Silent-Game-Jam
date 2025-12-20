@@ -10,6 +10,7 @@ public class CharacterObject : ScriptableObject
 
     [SerializedDictionary("Handshape", "Sprite")]
     public SerializedDictionary<HandSign.HandShape, HandSignSprite> handSprites;
+    public bool randomiseColoursOnCreate = false;
     public Color exteriorColor;
     public Color palmColor;
     public Color clawColor;
@@ -17,4 +18,5 @@ public class CharacterObject : ScriptableObject
 
     [SerializedDictionary("Question", "Responses")]
     public SerializedDictionary<string, Gesture.GestureEnum[]> responses;
+
 }
