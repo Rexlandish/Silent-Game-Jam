@@ -6,8 +6,22 @@ using UnityEngine.UIElements;
 public class SignCanvas : MonoBehaviour
 {
 
+    public static SignCanvas Instance;
+
     public GameObject signPrefab;
     public GameObject container;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,7 +41,7 @@ public class SignCanvas : MonoBehaviour
 
 
 
-    bool isVisible = false;
+    public bool isVisible = false;
 
     // QoL Functions
 
