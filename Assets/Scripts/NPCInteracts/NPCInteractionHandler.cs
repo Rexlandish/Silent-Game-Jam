@@ -5,12 +5,18 @@ using UnityEngine;
 public class NPCInteractionHandler : MonoBehaviour
 {
     public NPCHandler Handle;
-    public Camera cam;
     public float FovSpeed = 4f;
     public float normalFOV = 40f;
     public float targetFOV = 35f;
     public bool playerexit = false;
     public bool playerinside = false;
+
+    Camera cam;
+
+    private void Start()
+    {
+        cam = Camera.main;
+    }
 
     public void OnTriggerEnter(Collider other)
     {

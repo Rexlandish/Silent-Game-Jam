@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885d2b6987b30514a80668fe40df346f, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  rules:
+  - Send people to where they want to go.
+  - <b>BUT</b>, do not send dragons to where they want to go.
+  characters:
+  - character: {fileID: 11400000, guid: bd1f2c7db28ea544aab11591278e7f97, type: 2}
+    destination: 1
+    playerGuessDestination: 1
+    spawnPosition: {x: 5, y: 0, z: -20}
+  - character: {fileID: 11400000, guid: 5e095259609de484bb056fbfb9132b32, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: -5, y: 0, z: -20}
+  - character: {fileID: 11400000, guid: 2f6e5550dcb52d04da7a7deeb1a29004, type: 2}
+    destination: 1
+    playerGuessDestination: 2
+    spawnPosition: {x: 25, y: 0, z: -20}
+  - character: {fileID: 11400000, guid: 5382bcc60a4fdc14ebd65cf70b8dcf69, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: 15, y: 0, z: -20}

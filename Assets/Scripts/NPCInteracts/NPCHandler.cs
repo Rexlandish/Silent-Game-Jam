@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,8 +12,12 @@ public class NPCHandler : MonoBehaviour
     public BoxCollider InteractionRange;
     public AudioSource PingSFX;
     public GameObject DialogueBox;
-    
+    public GameObject characterCameraObject;
+    public SpriteRenderer sprite;
+
     public bool canInteract = false;
+
+    public int characterID;
 
     // Start is called
     // before the first frame update
@@ -25,10 +30,12 @@ public class NPCHandler : MonoBehaviour
     {
         if (canInteract == true)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                //DialogueBox.SetActive(true);
+                // DialogueBox.SetActive(true);
                 Debug.Log("Interacted");
+
+                CharacterManager.Instance.StartDialogue(this);
 
             }
         }

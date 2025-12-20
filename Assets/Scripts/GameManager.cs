@@ -2,6 +2,7 @@ using AYellowpaper.SerializedCollections;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Gesture;
@@ -20,8 +21,10 @@ public class GameManager : MonoBehaviour
     public bool UIBlockingInput = false;
     public Material handMaterial;
 
+    public CinemachineCamera playerCamera;
+
     public static GameManager Instance;
-    
+
 
     // Move all the new words into playerTranslations with empty strings
     public void SeenNewWords()
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         newGestures.Clear();
     }
+
+    
 
     // Is called by Character if any new words are performed
     public void CheckIfNewWord(GestureEnum gesture)
@@ -69,10 +74,12 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //CompletePlayerTranslations();
+
     }
 
-    // Don't do this!! 
+    // Don't do this!!
+    // These add all the translations as blank,
+    // they are meant to only be added if the player sees a new sign!
     void CompletePlayerTranslations()
     {
         foreach (GestureEnum gestureEnum in Enum.GetValues(typeof(GestureEnum)))
