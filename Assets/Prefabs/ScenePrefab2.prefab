@@ -1581,9 +1581,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: ff0f834d92779f34ea8780281c136f19, type: 2}
-  currentLevel: 0
+  - {fileID: 11400000, guid: 785766d6016881646824718c150fe34d, type: 2}
+  currentLevelIndex: 1
   loadLevelOnStart: 1
   NPCPrefab: {fileID: 5468480783709693882, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
+  lockInJudgementsButton: {fileID: 2543273600420950200}
 --- !u!1 &1984292078186404823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,6 +2309,8 @@ MonoBehaviour:
   TopDownMovementHandle: {fileID: 4405948359245702251}
   zoffset: 10
   height: 15
+  InBlindspot: 0
+  BlindSpotValue: 0
 --- !u!1 &3040336887774608398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7898,6 +7902,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+--- !u!1 &2543273600420950200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3444540543932499310, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+  m_PrefabInstance: {fileID: 902675418450965974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3997392616545488556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4323286203278932858, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
