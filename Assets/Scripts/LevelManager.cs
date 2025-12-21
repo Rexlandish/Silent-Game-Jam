@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
 
     void AllSpawnedNPCs()
     {
-        TranslationsUI.SetActive(false);
+        PanelTabManager.Instance.CloseAll();
     }
     
     private void Awake()

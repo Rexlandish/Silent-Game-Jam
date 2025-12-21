@@ -9,13 +9,34 @@ public class PanelTabManager : MonoBehaviour
     public SerializedDictionary<Tabs, bool> panelStatus;
     public SerializedDictionary<Tabs, GameObject> panels;
 
+    public static PanelTabManager Instance;
+
     //public bool IsActive { get {  return panelStatus.Values.Any(status => status); } }
+
+    private void Awake()
+    {
+        if (Instance == null) {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public bool IsActive()
     {
         return panelStatus[Tabs.Rules] || panelStatus[Tabs.Signs];
     }
 
+    public void CloseAll()
+    {
+        foreach (var tab in panels)
+        {
+            panelStatus[tab.Key] = false;
+        }
+        UpdatePanels();
+    }
 
     public enum Tabs
     {
@@ -25,11 +46,7 @@ public class PanelTabManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var panel in panelStatus.Keys)
-        {
-            panelStatus[panel] = false;
-        }
-        UpdatePanels();
+        //CloseAll();
     }
 
     // For unity button
