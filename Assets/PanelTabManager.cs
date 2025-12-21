@@ -72,7 +72,7 @@ public class PanelTabManager : MonoBehaviour
         }
 
         // Activate the selected ones
-        for (int i = 0; i <= panels.Count; i++)
+        for (int i = 0; i < panels.Count; i++)
         {
             var panel = panels.Keys.ToList()[i];
 

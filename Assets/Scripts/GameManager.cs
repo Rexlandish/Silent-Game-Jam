@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     public Material handMaterial;
 
     public CinemachineCamera playerCamera;
-
+    public int score;
+        
     public static GameManager Instance;
 
 

@@ -1582,10 +1582,13 @@ MonoBehaviour:
   levels:
   - {fileID: 11400000, guid: ff0f834d92779f34ea8780281c136f19, type: 2}
   - {fileID: 11400000, guid: 785766d6016881646824718c150fe34d, type: 2}
+  - {fileID: 11400000, guid: 7ad04b5f847ef55499aa905c2441658c, type: 2}
   currentLevelIndex: 1
   loadLevelOnStart: 1
+  TranslationsUI: {fileID: 0}
   NPCPrefab: {fileID: 5468480783709693882, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
   lockInJudgementsButton: {fileID: 2543273600420950200}
+  fadeCanvas: {fileID: 6008968689116157329}
 --- !u!1 &1984292078186404823
 GameObject:
   m_ObjectHideFlags: 0
@@ -7761,6 +7764,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5304790611960455053, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6542238943159441185, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7900,13 +7907,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4107650229647110867, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6008968689116157329}
   m_SourcePrefab: {fileID: 100100000, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
 --- !u!1 &2543273600420950200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3444540543932499310, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
   m_PrefabInstance: {fileID: 902675418450965974}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3857258985939126021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4107650229647110867, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+  m_PrefabInstance: {fileID: 902675418450965974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &6008968689116157329
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857258985939126021}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &3997392616545488556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4323286203278932858, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
