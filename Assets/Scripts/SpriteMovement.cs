@@ -30,6 +30,8 @@ public class SpriteMovement : MonoBehaviour
     public bool IsMovingUp = false;
     public bool IsMovingDown = false;
     public bool CanWalk = true;
+
+    public Rigidbody rb;
     
     public static SpriteMovement Instance;
 
@@ -43,6 +45,11 @@ public class SpriteMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        rb = this.GetComponent<Rigidbody>();
     }
     
     private void FixedUpdate()
@@ -143,18 +150,23 @@ public class SpriteMovement : MonoBehaviour
         //player movement
         if (CanWalk == true)
         {
+            Vector3 moveDirection = Vector3.zero;
+
             if (Input.GetKey(KeyCode.W))
-                transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+                moveDirection += transform.forward;
 
             if (Input.GetKey(KeyCode.S))
-                transform.Translate(Vector3.back * movementSpeed * Time.deltaTime);
+                moveDirection -= transform.forward;
 
             if (Input.GetKey(KeyCode.D))
-                transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
+                moveDirection += transform.right;
 
             if (Input.GetKey(KeyCode.A))
-                transform.Translate(Vector3.left * movementSpeed * Time.deltaTime);
+                moveDirection -= transform.right;
+            
+            rb.linearVelocity = moveDirection * movementSpeed;
         }
+        
         else
         {
             Debug.Log("Player Locked");
