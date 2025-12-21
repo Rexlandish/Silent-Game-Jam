@@ -13,30 +13,32 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   rules:
-  - Anyone murdered by cats should go to HELL!! They're, like, so harmless!
-  - Everyone else goes to heaven, I don't care...
+  - Murderers go to <color=red>HELL</color>.
+  - UNLESS it was a dragon they murdered, then they go to <color=blue>HEAVEN.</color>
+  - BUT if they're also a dragon themselves, then send them to <color=red>Hell</color>.
+  - Heaven for everyone else.
   characters:
   - character: {fileID: 11400000, guid: 2534cb0e816523743b20bd8c6a86b7cb, type: 2}
-    destination: 1
-    playerGuessDestination: 2
-    spawnPosition: {x: -11, y: 0, z: -1}
-  - character: {fileID: 11400000, guid: fa26f2054cafc674eb9c6f5ee6342e58, type: 2}
-    destination: 1
-    playerGuessDestination: 1
-    spawnPosition: {x: -9, y: 0, z: -10}
-  - character: {fileID: 11400000, guid: f647d75fba3b9ea4f9a9f2b22edae8f3, type: 2}
     destination: 0
     playerGuessDestination: 0
+    spawnPosition: {x: -11, y: 0, z: -1}
+  - character: {fileID: 11400000, guid: fa26f2054cafc674eb9c6f5ee6342e58, type: 2}
+    destination: 0
+    playerGuessDestination: 0
+    spawnPosition: {x: -9, y: 0, z: -10}
+  - character: {fileID: 11400000, guid: f647d75fba3b9ea4f9a9f2b22edae8f3, type: 2}
+    destination: 1
+    playerGuessDestination: 1
     spawnPosition: {x: -1, y: 0, z: -17}
   - character: {fileID: 11400000, guid: 1b065f3e72b5bb74caef5b6298dc8a25, type: 2}
-    destination: 0
-    playerGuessDestination: 2
+    destination: 1
+    playerGuessDestination: 1
     spawnPosition: {x: 9.5, y: 0, z: -17}
   - character: {fileID: 11400000, guid: 3853ead7629e0384f9dbe925da2fd023, type: 2}
     destination: 0
-    playerGuessDestination: 2
+    playerGuessDestination: 0
     spawnPosition: {x: 17, y: 0, z: -13}
   - character: {fileID: 11400000, guid: 6cb516dd285949e46a8173ee7da5410f, type: 2}
     destination: 1
-    playerGuessDestination: 2
+    playerGuessDestination: 1
     spawnPosition: {x: 17, y: 0, z: -1}

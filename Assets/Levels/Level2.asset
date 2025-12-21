@@ -18,7 +18,7 @@ MonoBehaviour:
   characters:
   - character: {fileID: 11400000, guid: 3851dd5cc2b81fa49b6c3804eea04e8f, type: 2}
     destination: 1
-    playerGuessDestination: 2
+    playerGuessDestination: 1
     spawnPosition: {x: -11, y: 0, z: -1}
   - character: {fileID: 11400000, guid: 63d3996de2c730e4aa173659123cd073, type: 2}
     destination: 1
@@ -30,13 +30,13 @@ MonoBehaviour:
     spawnPosition: {x: -1, y: 0, z: -17}
   - character: {fileID: 11400000, guid: 472513c3937206b4b983269c523a533a, type: 2}
     destination: 0
-    playerGuessDestination: 2
+    playerGuessDestination: 0
     spawnPosition: {x: 9.5, y: 0, z: -17}
   - character: {fileID: 11400000, guid: df6282ff8f664344fbe7c263a4b9d708, type: 2}
     destination: 0
-    playerGuessDestination: 2
+    playerGuessDestination: 0
     spawnPosition: {x: 17, y: 0, z: -13}
   - character: {fileID: 11400000, guid: d80cd8faadd596e4a927842464902b97, type: 2}
     destination: 1
-    playerGuessDestination: 2
+    playerGuessDestination: 1
     spawnPosition: {x: 17, y: 0, z: -1}

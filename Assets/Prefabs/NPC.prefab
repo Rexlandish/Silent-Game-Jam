@@ -165,8 +165,10 @@ MonoBehaviour:
   characterCameraObject: {fileID: 1657468582180862215}
   sprite: {fileID: 7202485292138165888}
   Translations: {fileID: 0}
+  Interacting: 0
   canInteract: 0
   InBlindspot: 0
+  TranslationsImage: {fileID: 0}
   characterID: 0
 --- !u!1 &5843775372831015592
 GameObject:
@@ -243,7 +245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1321069481, guid: 5a53cf55a4a69aa4f955087175db5434, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
