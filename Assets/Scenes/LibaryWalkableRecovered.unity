@@ -17022,7 +17022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2531896584391309597, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2861218059580101526, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: Lens.FieldOfView
@@ -17204,30 +17204,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4427135305047158927, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427135305047158927, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427135305047158927, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427135305047158927, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427135305047158927, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427135305047158927, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4533865822168348839, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_CellSize.x
       value: 100
@@ -17399,18 +17375,6 @@ PrefabInstance:
     - target: {fileID: 6218416836862665463, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6614525215340198794, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6614525215340198794, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6614525215340198794, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_Color.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6681659591975313026, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_AnchorMax.y

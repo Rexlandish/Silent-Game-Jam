@@ -22,10 +22,11 @@ public class GameManager : MonoBehaviour
     public Material handMaterial;
 
     public CinemachineCamera playerCamera;
-    public int score;
         
     public static GameManager Instance;
 
+    public int score;
+    public int maxScore;
 
     // Move all the new words into playerTranslations with empty strings
     public void SeenNewWords()

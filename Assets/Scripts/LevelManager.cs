@@ -163,6 +163,7 @@ public class LevelManager : MonoBehaviour
         }
 
         GameManager.Instance.score = score;
+        GameManager.Instance.maxScore = maxScore;
 
         print(score);
 
@@ -170,6 +171,10 @@ public class LevelManager : MonoBehaviour
         {
             // Load next level
             StartCoroutine(LoadLevel(currentLevelIndex + 1, true));
+        }
+        else
+        {
+            StartCoroutine(LoadLevel(currentLevelIndex, true));
         }
     }
 
