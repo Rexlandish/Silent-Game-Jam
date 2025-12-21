@@ -16,7 +16,7 @@
         public GameObject characterCameraObject;
         public SpriteRenderer sprite;
         
-        public Image Translations;
+        public GameObject Translations;
 
         public bool canInteract = false;
         public bool InBlindspot = false;
@@ -28,6 +28,7 @@
         void Start()
         {
             PopupParticle = Popup.GetComponent<ParticleSystem>();
+            
         }
 
         void Update()
