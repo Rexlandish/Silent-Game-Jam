@@ -28,6 +28,6 @@ public class StartGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     
     public void StartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }
