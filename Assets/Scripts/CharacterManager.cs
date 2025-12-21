@@ -115,6 +115,7 @@ public class CharacterManager : MonoBehaviour
         focusedNPC.characterCameraObject.SetActive(false);
         hasStartedDialogue = false;
         focusedNPC.sprite.enabled = true;
+        focusedNPC.Interacting = false;
 
         characterSprite.sprite = null;
         characterSprite.color = Color.white;

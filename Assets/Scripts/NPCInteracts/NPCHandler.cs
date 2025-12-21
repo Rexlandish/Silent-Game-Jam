@@ -18,28 +18,37 @@
         
         public GameObject Translations;
 
+        public bool Interacting = false;
+
         public bool canInteract = false;
         public bool InBlindspot = false;
+        public Image TranslationsImage;
 
         public int characterID;
+        
+        public static NPCHandler instance;
 
         // Start is called
         // before the first frame update
         void Start()
         {
             PopupParticle = Popup.GetComponent<ParticleSystem>();
+            //TranslationsImage.enabled = false;
             
         }
 
         void Update()
         {
-            if (canInteract == true)
+            if (canInteract == true && Interacting == false)
             {
                 if ( Translations.gameObject.activeInHierarchy == false)
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         // DialogueBox.SetActive(true);
                         Debug.Log("Interacted");
+                        Interacting = true;
+                        //TranslationsImage.enabled = true;
+                        
 
                         CharacterManager.Instance.StartDialogue(this);
 
