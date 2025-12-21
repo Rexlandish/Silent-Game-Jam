@@ -54,13 +54,14 @@ public class LevelManager : MonoBehaviour
         {
 
             // Spawn the characters in the right positions,
-            // and assign their character IDs
-
+            // and assign their character ID
             var npcData = level.characters[i];
             var npc = Instantiate(NPCPrefab, npcData.spawnPosition, Quaternion.identity);
             var npcHandler = npc.GetComponent<NPCHandler>();
             npcHandler.characterID = i;
 
+            npcHandler.Translations = GameObject.FindWithTag("TranslationsID");
+            
             spawnedNPCs.Add(npc);
         }
     }

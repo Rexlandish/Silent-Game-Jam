@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5468480783709693882}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
@@ -164,7 +164,9 @@ MonoBehaviour:
   DialogueBox: {fileID: 0}
   characterCameraObject: {fileID: 1657468582180862215}
   sprite: {fileID: 7202485292138165888}
+  Translations: {fileID: 0}
   canInteract: 0
+  InBlindspot: 0
   characterID: 0
 --- !u!1 &5843775372831015592
 GameObject:
@@ -325,3 +327,4 @@ MonoBehaviour:
   targetFOV: 32
   playerexit: 0
   playerinside: 0
+  cam: {fileID: 0}
