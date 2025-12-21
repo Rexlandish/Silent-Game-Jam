@@ -41,7 +41,7 @@
         {
             if (canInteract == true && Interacting == false)
             {
-                if ( Translations.gameObject.activeInHierarchy == false)
+               if (PanelTabManager.Instance.IsActive() == false)
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         // DialogueBox.SetActive(true);

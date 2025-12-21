@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class LevelManager : MonoBehaviour
 
 
     public Level[] levels;
-    public int currentLevel;
+    public int currentLevelIndex;
 
     public bool loadLevelOnStart = true; // Will Load currentLevel
 
@@ -16,7 +17,8 @@ public class LevelManager : MonoBehaviour
     public GameObject TranslationsUI;
     public GameObject NPCPrefab;
 
-    public Level CurrentLevel { get { return levels[currentLevel]; } }
+    public Level CurrentLevel { get { return levels[currentLevelIndex]; } }
+    public GameObject lockInJudgementsButton;
 
     List<GameObject> spawnedNPCs = new();
 
@@ -42,7 +44,7 @@ public class LevelManager : MonoBehaviour
 
         // Fade only if fade = true
 
-        var level = levels[currentLevel];
+        var level = levels[currentLevelIndex];
 
         // Set all player guesses in gameobject to None
         for (int i = 0; i < level.characters.Length; i++)
@@ -69,10 +71,44 @@ public class LevelManager : MonoBehaviour
         AllSpawnedNPCs();
     }
 
+    public void CheckIfPlayerCanLockInJudgements()
+    {
+        if (CurrentLevel.characters.All(character => character.playerGuessDestination != Level.Destination.None))
+        {
+            lockInJudgementsButton.SetActive(true);
+        }
+    }
+
+    public void LockInJudgements()
+    {
+        int score = 0;
+
+        for (int i = 0; i < CurrentLevel.characters.Length; i++)
+        {
+            var currentChar = CurrentLevel.characters[i];
+            if (currentChar.destination == currentChar.playerGuessDestination)
+            {
+                print($"{i} correct!");
+                score += 1;
+            }
+            else
+            {
+                print($"{i} WRONG!");
+            }
+        }
+
+
+        if (score >= 4)
+        {
+            LoadLevel(1, true);
+        }
+    }
+
     void AllSpawnedNPCs()
     {
-        TranslationsUI.SetActive(false);
+        PanelTabManager.Instance.CloseAll();
     }
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -90,9 +126,11 @@ public class LevelManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        lockInJudgementsButton.SetActive(false);
+
         if (loadLevelOnStart)
         {
-            LoadLevel(currentLevel, false);
+            LoadLevel(currentLevelIndex, false);
         }
     }
 

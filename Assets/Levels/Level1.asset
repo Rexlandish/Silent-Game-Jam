@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   rules:
-  - Send people to where they want to go.
-  - <b>BUT</b>, do not send dragons to where they want to go.
+  - Everyone wants to go to heaven, or hell.
+  - Send them to where they ask.
   characters:
   - character: {fileID: 11400000, guid: bd1f2c7db28ea544aab11591278e7f97, type: 2}
     destination: 1
-    playerGuessDestination: 1
+    playerGuessDestination: 2
     spawnPosition: {x: 5, y: 0, z: -20}
   - character: {fileID: 11400000, guid: 5e095259609de484bb056fbfb9132b32, type: 2}
     destination: 0
     playerGuessDestination: 2
     spawnPosition: {x: -5, y: 0, z: -20}
   - character: {fileID: 11400000, guid: 2f6e5550dcb52d04da7a7deeb1a29004, type: 2}
-    destination: 1
-    playerGuessDestination: 2
-    spawnPosition: {x: 25, y: 0, z: -20}
-  - character: {fileID: 11400000, guid: 5382bcc60a4fdc14ebd65cf70b8dcf69, type: 2}
     destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: 10, y: 0, z: -20}
+  - character: {fileID: 11400000, guid: 5382bcc60a4fdc14ebd65cf70b8dcf69, type: 2}
+    destination: 1
     playerGuessDestination: 2
     spawnPosition: {x: 15, y: 0, z: -20}

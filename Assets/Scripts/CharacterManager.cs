@@ -59,7 +59,7 @@ public class CharacterManager : MonoBehaviour
         hasStartedDialogue = true;
 
         // Get currentCharacterData from NPC and LevelManager
-        var currentLevel = LevelManager.Instance.levels[LevelManager.Instance.currentLevel];
+        var currentLevel = LevelManager.Instance.levels[LevelManager.Instance.currentLevelIndex];
         var currentCharacterData = currentLevel.characters[npc.characterID];
         var currentCharacter = currentCharacterData.character;
 
@@ -90,7 +90,7 @@ public class CharacterManager : MonoBehaviour
     {
         // Surely this can be stored in a variable somewhere
         JudgementPanel.Instance.SetJudgementText(
-            LevelManager.Instance.levels[LevelManager.Instance.currentLevel]
+            LevelManager.Instance.levels[LevelManager.Instance.currentLevelIndex]
             .characters[focusedNPC.characterID]
             .playerGuessDestination
         );
@@ -100,7 +100,7 @@ public class CharacterManager : MonoBehaviour
     {
 
         var lm = LevelManager.Instance;
-        int currentLevelIndex = lm.currentLevel;
+        int currentLevelIndex = lm.currentLevelIndex;
         var currentLevel = lm.levels[currentLevelIndex];
         var characterEntry = currentLevel.characters[focusedNPC.characterID];
 
@@ -116,6 +116,9 @@ public class CharacterManager : MonoBehaviour
         focusedNPC.sprite.enabled = true;
         focusedNPC.Interacting = false;
         SpriteMovement.Instance.CanWalk = true;
+
+        // Check if player can be shown LockInJudgements
+        LevelManager.Instance.CheckIfPlayerCanLockInJudgements();
 
         characterSprite.sprite = null;
         characterSprite.color = Color.white;

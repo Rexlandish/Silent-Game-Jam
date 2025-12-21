@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885d2b6987b30514a80668fe40df346f, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  rules:
+  - Anyone murdered by cats should go to HELL!! They're, like, so harmless!
+  - Everyone else goes to heaven, I don't care...
+  characters:
+  - character: {fileID: 11400000, guid: 3851dd5cc2b81fa49b6c3804eea04e8f, type: 2}
+    destination: 1
+    playerGuessDestination: 1
+    spawnPosition: {x: 0, y: 0, z: 10}
+  - character: {fileID: 11400000, guid: ca115d9c1b9243e4f94a52a332ec0a58, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: -10, y: 0, z: -10}
+  - character: {fileID: 11400000, guid: df6282ff8f664344fbe7c263a4b9d708, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: 10, y: 0, z: 10}
+  - character: {fileID: 11400000, guid: 63d3996de2c730e4aa173659123cd073, type: 2}
+    destination: 1
+    playerGuessDestination: 2
+    spawnPosition: {x: -10, y: 0, z: 10}
+  - character: {fileID: 11400000, guid: 472513c3937206b4b983269c523a533a, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: 10, y: 0, z: -10}
+  - character: {fileID: 11400000, guid: d80cd8faadd596e4a927842464902b97, type: 2}
+    destination: 1
+    playerGuessDestination: 2
+    spawnPosition: {x: 10, y: 0, z: 0}
