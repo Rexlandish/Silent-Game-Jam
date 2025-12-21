@@ -84,7 +84,6 @@ public class CharacterManager : MonoBehaviour
             Load(currentCharacter);
             UpdateJudgementPanel();
         }
-
     }
 
     public void UpdateJudgementPanel()
@@ -116,6 +115,7 @@ public class CharacterManager : MonoBehaviour
         hasStartedDialogue = false;
         focusedNPC.sprite.enabled = true;
         focusedNPC.Interacting = false;
+        SpriteMovement.Instance.CanWalk = true;
 
         // Check if player can be shown LockInJudgements
         LevelManager.Instance.CheckIfPlayerCanLockInJudgements();
