@@ -138,6 +138,8 @@ public class LevelManager : MonoBehaviour
     {
         int score = 0;
 
+        int maxScore = CurrentLevel.characters.Length;
+
         for (int i = 0; i < CurrentLevel.characters.Length; i++)
         {
             var currentChar = CurrentLevel.characters[i];
@@ -156,7 +158,7 @@ public class LevelManager : MonoBehaviour
 
         print(score);
 
-        if (score >= 4)
+        if (score >= maxScore)
         {
             // Load next level
             StartCoroutine(LoadLevel(currentLevelIndex + 1, true));
