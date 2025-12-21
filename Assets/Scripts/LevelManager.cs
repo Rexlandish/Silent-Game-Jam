@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
     public GameObject NPCPrefab;
 
+    public Level CurrentLevel { get { return levels[currentLevel]; } }
+
     List<GameObject> spawnedNPCs = new();
 
     

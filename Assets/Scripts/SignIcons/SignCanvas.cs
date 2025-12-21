@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SignCanvas : MonoBehaviour
+public class SignCanvas : MonoBehaviour, IPanel
 {
 
     public static SignCanvas Instance;
@@ -56,16 +56,16 @@ public class SignCanvas : MonoBehaviour
         isVisible = vis;
         if (isVisible)
         {
-            Show();
+            OpenPanel();
         }
         else
         {
-            Hide();
+            ClosePanel();
         }
     }
 
     List<GameObject> spawnedSigns = new();
-    public void Show()
+    public void OpenPanel()
     {
         GameManager.Instance.UIBlockingInput = true;
         container.SetActive(true);
@@ -106,7 +106,7 @@ public class SignCanvas : MonoBehaviour
 
     }
 
-    public void Hide()
+    public void ClosePanel()
     {
         // Clear list view
         container.SetActive(false);

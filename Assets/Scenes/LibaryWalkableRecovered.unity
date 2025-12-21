@@ -243,6 +243,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236025325}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &357790337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418041124395133017, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+  m_PrefabInstance: {fileID: 1523827811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &549735762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1003893534737190213, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+  m_PrefabInstance: {fileID: 1523827811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &588988211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6533592369056585875, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
@@ -316,6 +326,34 @@ PrefabInstance:
     - target: {fileID: 1311059655782225890, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419783786802889872, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: panels._serializedList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419783786802889872, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: panelStatus._serializedList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419783786802889872, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: panels._serializedList.Array.data[1].Key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419783786802889872, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: panels._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 357790337}
+    - target: {fileID: 1419783786802889872, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: panels._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 549735762}
+    - target: {fileID: 1419783786802889872, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: panelStatus._serializedList.Array.data[1].Key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115952354661034846, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2861218059580101526, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: Lens.FieldOfView
@@ -395,6 +433,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205997617135651042, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056823456169393059, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7966993351789010671, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
