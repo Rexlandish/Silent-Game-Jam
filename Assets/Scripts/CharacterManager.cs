@@ -84,7 +84,6 @@ public class CharacterManager : MonoBehaviour
             Load(currentCharacter);
             UpdateJudgementPanel();
         }
-
     }
 
     public void UpdateJudgementPanel()
@@ -116,6 +115,7 @@ public class CharacterManager : MonoBehaviour
         hasStartedDialogue = false;
         focusedNPC.sprite.enabled = true;
         focusedNPC.Interacting = false;
+        SpriteMovement.Instance.CanWalk = true;
 
         characterSprite.sprite = null;
         characterSprite.color = Color.white;

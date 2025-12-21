@@ -51,6 +51,7 @@
                         
 
                         CharacterManager.Instance.StartDialogue(this);
+                        SpriteMovement.Instance.CanWalk = false;
 
                     }
                 
