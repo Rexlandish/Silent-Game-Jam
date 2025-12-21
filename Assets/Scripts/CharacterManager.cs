@@ -188,6 +188,8 @@ public class CharacterManager : MonoBehaviour
 
         handSignManager.hand1.exteriorColor = CO.exteriorColor;
 
+        handSignManager.DoHandSign(Gesture.GestureEnum.Rest);
+
         // Delete existing buttons
         
         foreach (GameObject button in spawnedButtons)

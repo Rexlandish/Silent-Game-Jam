@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour
 
     List<GameObject> spawnedNPCs = new();
 
+    public GameObject resultsScreen;
+
 
     bool continueLoad = false;
     public IEnumerator LoadLevel(int index = -1, bool fade = true)
@@ -97,15 +99,16 @@ public class LevelManager : MonoBehaviour
         print("spawned");
         // Wait for continue
         
-        continueLoad = true;
+        
         CheckIfPlayerCanLockInJudgements();
 
-
+        resultsScreen.SetActive(true);
         print("okay");
         if (fade)
         {
-            //yield return new WaitUntil(() => continueLoad);
+            yield return new WaitUntil(() => continueLoad);
         }
+        resultsScreen.SetActive(false);
 
         print("fading");
         // fade in
@@ -120,6 +123,11 @@ public class LevelManager : MonoBehaviour
         }
 
 
+    }
+
+    public void ContinueLevel()
+    {
+        continueLoad = true;
     }
 
     public void CheckIfPlayerCanLockInJudgements()
@@ -155,6 +163,7 @@ public class LevelManager : MonoBehaviour
         }
 
         GameManager.Instance.score = score;
+        GameManager.Instance.maxScore = maxScore;
 
         print(score);
 
@@ -162,6 +171,10 @@ public class LevelManager : MonoBehaviour
         {
             // Load next level
             StartCoroutine(LoadLevel(currentLevelIndex + 1, true));
+        }
+        else
+        {
+            StartCoroutine(LoadLevel(currentLevelIndex, true));
         }
     }
 

@@ -1134,6 +1134,8 @@ MonoBehaviour:
   IsMovingRight: 0
   IsMovingUp: 0
   IsMovingDown: 0
+  CanWalk: 1
+  rb: {fileID: 0}
 --- !u!114 &3423459972304893138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,12 +1585,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff0f834d92779f34ea8780281c136f19, type: 2}
   - {fileID: 11400000, guid: 785766d6016881646824718c150fe34d, type: 2}
   - {fileID: 11400000, guid: 7ad04b5f847ef55499aa905c2441658c, type: 2}
-  currentLevelIndex: 1
+  currentLevelIndex: 0
   loadLevelOnStart: 1
-  TranslationsUI: {fileID: 0}
+  TranslationsUI: {fileID: 7492640515404579138}
   NPCPrefab: {fileID: 5468480783709693882, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
   lockInJudgementsButton: {fileID: 2543273600420950200}
   fadeCanvas: {fileID: 6008968689116157329}
+  resultsScreen: {fileID: 2531896584391309597}
 --- !u!1 &1984292078186404823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6176,7 +6179,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -7564,6 +7567,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 861772843996616244, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1325791499467125885, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -7592,6 +7599,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1660307624266712379, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6409193221824734210}
     - target: {fileID: 1990087457599373489, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -7640,6 +7651,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.820532
       objectReference: {fileID: 0}
+    - target: {fileID: 2518739180615408017, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6409193221824734210}
     - target: {fileID: 3319218422675915690, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -7912,6 +7927,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6008968689116157329}
   m_SourcePrefab: {fileID: 100100000, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+--- !u!1 &2531896584391309597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3433405402745933003, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+  m_PrefabInstance: {fileID: 902675418450965974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2543273600420950200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3444540543932499310, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
@@ -7948,6 +7968,11 @@ MonoBehaviour:
 --- !u!4 &6963075722647116403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7793236132505333669, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
+  m_PrefabInstance: {fileID: 902675418450965974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7492640515404579138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7745565030143030420, guid: 85e8e3ae1ae537448975f95fabc07812, type: 3}
   m_PrefabInstance: {fileID: 902675418450965974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1291961923019552162

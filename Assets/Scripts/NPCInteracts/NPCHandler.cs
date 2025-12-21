@@ -47,6 +47,7 @@
                         // DialogueBox.SetActive(true);
                         Debug.Log("Interacted");
                         Interacting = true;
+                        Popup.active = false;
                         //TranslationsImage.enabled = true;
                         
 
@@ -64,7 +65,7 @@
         {
             PlayerInsideCollider = true;
             Debug.Log("Within Interaction Range");
-            //PopupParticle.Play();
+            Popup.active = true;
             canInteract = true;
             //Instantiate(PingSFX, transform.position, Quaternion.identity);
         }
@@ -75,6 +76,7 @@
         {
             PlayerInsideCollider = false;
             Debug.Log("N/A");
+            Popup.active = false;
             //PopupParticle.Clear();
             //PopupParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             canInteract = false;
