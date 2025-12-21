@@ -2174,6 +2174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleCanvas: {fileID: 1286813391105023624}
+  ruleText: {fileID: 8857331489877905806}
 --- !u!1 &2701534021611731729
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,9 +5313,9 @@ RectTransform:
   - {fileID: 5743290987600872928}
   - {fileID: 1243891442661230300}
   - {fileID: 2128474644124264616}
+  - {fileID: 6449114408271743126}
   - {fileID: 1654086018107336202}
   - {fileID: 3451704806059551714}
-  - {fileID: 6449114408271743126}
   m_Father: {fileID: 7793236132505333669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5397,18 +5398,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de92a9240afa634492ef3ad098655eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanelStatus:
-    _serializedList:
-    - Key: 0
-      Value: 0
-    - Key: 1
-      Value: 0
-  Panels:
-    _serializedList:
-    - Key: 0
-      Value: {fileID: 1286813391105023624}
-    - Key: 1
-      Value: {fileID: 344643394973522290}
+  panelStatus:
+    _serializedList: []
+  panels:
+    _serializedList: []
 --- !u!1 &6552227401483275558
 GameObject:
   m_ObjectHideFlags: 0
@@ -6501,7 +6494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360.351, y: 160}
+  m_AnchoredPosition: {x: 360.351, y: 247}
   m_SizeDelta: {x: 289.298, y: 65.569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8058232001674398790
@@ -7213,7 +7206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360.351, y: 240}
+  m_AnchoredPosition: {x: 360.351, y: 164}
   m_SizeDelta: {x: 289.298, y: 65.569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2001240405878037762
@@ -7508,7 +7501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Show Translations
+  m_text: Translations
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

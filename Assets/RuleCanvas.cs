@@ -10,12 +10,14 @@ public class RuleCanvas : MonoBehaviour, IPanel
 
     void Start()
     {
-        string[] rules = LevelManager.Instance.CurrentLevel.rules;
-        ruleText.text = string.Join("<br/>", rules.Select((rule, index) => $"{index + 1}. {rule}"));
+
     }
 
     public void OpenPanel()
     {
+        string[] rules = LevelManager.Instance.CurrentLevel.rules;
+        ruleText.text = string.Join("<br/>", rules.Select((rule, index) => $"{index + 1}. {rule}"));
+
         print("Open");
         ruleCanvas.SetActive(true);
     }

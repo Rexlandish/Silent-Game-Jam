@@ -5,8 +5,18 @@ using UnityEngine.UIElements;
 
 public class PanelTabManager : MonoBehaviour
 {
+
     public SerializedDictionary<Tabs, bool> panelStatus;
     public SerializedDictionary<Tabs, GameObject> panels;
+
+    //public bool IsActive { get {  return panelStatus.Values.Any(status => status); } }
+
+    public bool IsActive()
+    {
+        return panelStatus[Tabs.Rules] || panelStatus[Tabs.Signs];
+    }
+
+
     public enum Tabs
     {
         Rules,
