@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -20,31 +21,55 @@ public class LevelManager : MonoBehaviour
     public Level CurrentLevel { get { return levels[currentLevelIndex]; } }
     public GameObject lockInJudgementsButton;
 
+    [Space]
+
+    public CanvasGroup fadeCanvas;
+
     List<GameObject> spawnedNPCs = new();
 
-    
 
-    public void LoadLevel(int index, bool fade = true)
+    bool continueLoad = false;
+    public IEnumerator LoadLevel(int index = -1, bool fade = true)
     {
 
-        
+        // Initiate variable to control the mid fade pause
+        continueLoad = false;
 
+        print("LOADING LEVEL!!!!");
 
         // Fade out
         // Destroy NPCs, disable control
 
+        if (fade)
+        {
+            for (float i = 0; i < 1; i += Time.deltaTime)
+            {
+                fadeCanvas.alpha = i;
+                yield return null;
+            }
+            fadeCanvas.alpha = 1;
+        }
+
+
         for (int i = 0; i < spawnedNPCs.Count; i++)
         {
             Destroy(spawnedNPCs[i]);
+            Debug.Log(spawnedNPCs[i], spawnedNPCs[i]);
         }
         spawnedNPCs.Clear();
 
         // Create new NPCs
-        // Fade in
+        
+        // If no level given, use the currentLevelIndex
+        // Otherwise update currentLevelIndex with index
+        if (index != -1)
+        {
+            currentLevelIndex = index;
+        }
 
-        // Fade only if fade = true
+        var level = levels[index];
 
-        var level = levels[currentLevelIndex];
+        print("understood");
 
         // Set all player guesses in gameobject to None
         for (int i = 0; i < level.characters.Length; i++)
@@ -52,7 +77,7 @@ public class LevelManager : MonoBehaviour
             level.characters[i].playerGuessDestination = Level.Destination.None;
         }
 
-
+        print("reset");
         for (int i = 0; i < level.characters.Length; i++)
         {
 
@@ -69,6 +94,32 @@ public class LevelManager : MonoBehaviour
         }
         
         AllSpawnedNPCs();
+        print("spawned");
+        // Wait for continue
+        
+        continueLoad = true;
+        CheckIfPlayerCanLockInJudgements();
+
+
+        print("okay");
+        if (fade)
+        {
+            //yield return new WaitUntil(() => continueLoad);
+        }
+
+        print("fading");
+        // fade in
+        if (fade)
+        {
+            for (float i = 0; i <= 1; i += Time.deltaTime)
+            {
+                fadeCanvas.alpha = 1 - i;
+                yield return null;
+            }
+            fadeCanvas.alpha = 0;
+        }
+
+
     }
 
     public void CheckIfPlayerCanLockInJudgements()
@@ -76,6 +127,10 @@ public class LevelManager : MonoBehaviour
         if (CurrentLevel.characters.All(character => character.playerGuessDestination != Level.Destination.None))
         {
             lockInJudgementsButton.SetActive(true);
+        }
+        else
+        {
+            lockInJudgementsButton.SetActive(false);
         }
     }
 
@@ -97,10 +152,14 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+        GameManager.Instance.score = score;
+
+        print(score);
 
         if (score >= 4)
         {
-            LoadLevel(1, true);
+            // Load next level
+            StartCoroutine(LoadLevel(currentLevelIndex + 1, true));
         }
     }
 
@@ -130,7 +189,7 @@ public class LevelManager : MonoBehaviour
 
         if (loadLevelOnStart)
         {
-            LoadLevel(currentLevelIndex, false);
+            StartCoroutine(LoadLevel(currentLevelIndex, false));
         }
     }
 
