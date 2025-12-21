@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -102,6 +103,19 @@ public class LevelManager : MonoBehaviour
         
         CheckIfPlayerCanLockInJudgements();
 
+        bool isPass = GameManager.Instance.score >= GameManager.Instance.maxScore;
+        string text = $"Score: {GameManager.Instance.score}/{GameManager.Instance.maxScore}";
+        if (isPass)
+        {
+            text += "<br>Continue to the next level...<br>Don't forget to check the new rules...";
+        }
+        else
+        {
+            text += "<br>TRY AGAIN!!!";
+        }
+
+
+        resultsScreen.GetComponentInChildren<TextMeshProUGUI>().text = text;
         resultsScreen.SetActive(true);
         print("okay");
         if (fade)
