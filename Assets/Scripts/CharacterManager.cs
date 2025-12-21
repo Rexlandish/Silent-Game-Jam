@@ -115,6 +115,7 @@ public class CharacterManager : MonoBehaviour
         focusedNPC.characterCameraObject.SetActive(false);
         hasStartedDialogue = false;
         focusedNPC.sprite.enabled = true;
+        focusedNPC.Interacting = false;
 
         // Check if player can be shown LockInJudgements
         LevelManager.Instance.CheckIfPlayerCanLockInJudgements();

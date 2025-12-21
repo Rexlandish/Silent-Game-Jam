@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public bool loadLevelOnStart = true; // Will Load currentLevel
 
     public static LevelManager Instance;
+    public GameObject TranslationsUI;
     public GameObject NPCPrefab;
 
     public Level CurrentLevel { get { return levels[currentLevelIndex]; } }
@@ -66,6 +67,8 @@ public class LevelManager : MonoBehaviour
             
             spawnedNPCs.Add(npc);
         }
+        
+        AllSpawnedNPCs();
     }
 
     public void CheckIfPlayerCanLockInJudgements()
@@ -101,6 +104,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    void AllSpawnedNPCs()
+    {
+        TranslationsUI.SetActive(false);
+    }
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
