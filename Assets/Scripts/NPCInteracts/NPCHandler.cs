@@ -33,8 +33,9 @@
 
         void Update()
         {
-            if (canInteract == true && Translations.gameObject.activeInHierarchy == false)
+            if (canInteract == true)
             {
+                if ( Translations.gameObject.activeInHierarchy == false)
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         // DialogueBox.SetActive(true);
