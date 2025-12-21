@@ -9768,6 +9768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 5468480783709693882, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6477387015657826075, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000086307526
@@ -14172,11 +14176,11 @@ PrefabInstance:
     - target: {fileID: 816412438843600711, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
       propertyPath: Translations
       value: 
-      objectReference: {fileID: 7492640513899627809}
+      objectReference: {fileID: 0}
     - target: {fileID: 816412438843600711, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
       propertyPath: TranslationsImage
       value: 
-      objectReference: {fileID: 7492640513899627811}
+      objectReference: {fileID: 0}
     - target: {fileID: 5468480783709693882, guid: a1dd35803c1a7b445b7554186ce22f7d, type: 3}
       propertyPath: m_Name
       value: NPC
@@ -18050,34 +18054,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LockInJudgements
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985078626813833453, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2115952354661034846, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -18490,6 +18466,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6218416836862665463, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6633883924008142880, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_Color.b
       value: 0.4528302
@@ -18501,9 +18481,6 @@ PrefabInstance:
     - target: {fileID: 6633883924008142880, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_Color.r
       value: 0.04916166
-    - target: {fileID: 6218416836862665463, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6681659591975313026, guid: 17e39636f5465ea41992a8157847cdc4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -24914,3 +24891,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1523827811}
   - {fileID: 864507657}
+  - {fileID: 1298712260}
