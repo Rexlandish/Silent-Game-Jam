@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class LevelManager : MonoBehaviour
     [Space]
 
     public CanvasGroup fadeCanvas;
+    public GameObject GrandFatherSFX;
 
     List<GameObject> spawnedNPCs = new();
 
@@ -148,6 +150,8 @@ public class LevelManager : MonoBehaviour
     {
         if (CurrentLevel.characters.All(character => character.playerGuessDestination != Level.Destination.None))
         {
+            //Grandfatherclock
+            Instantiate(GrandFatherSFX, transform.position, Quaternion.identity);
             lockInJudgementsButton.SetActive(true);
         }
         else
@@ -225,6 +229,9 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentLevelIndex == 3)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }

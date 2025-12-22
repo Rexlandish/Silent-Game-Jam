@@ -4,6 +4,7 @@ public class Draw : MonoBehaviour
 {
     public Camera m_camera;
     public GameObject brush;
+    public AudioSource DrawSound;
     public float drawDistance = 5f;
 
     private LineRenderer currentLineRenderer;
@@ -19,14 +20,17 @@ public class Draw : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             CreateBrush();
+            DrawSound.enabled = true;
         }
         else if (Input.GetMouseButton(0) && currentLineRenderer != null)
         {
             PointToMousePos();
+            DrawSound.enabled = true;
         }
         else if (Input.GetMouseButtonUp(0))
         {
             currentLineRenderer = null;
+            DrawSound.enabled = false;
         }
     }
 

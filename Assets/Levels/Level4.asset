@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885d2b6987b30514a80668fe40df346f, type: 3}
+  m_Name: Level4
+  m_EditorClassIdentifier: 
+  rules:
+  - Goto Finish
+  characters:
+  - character: {fileID: 11400000, guid: 2534cb0e816523743b20bd8c6a86b7cb, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: -11, y: 0, z: -1}
+  - character: {fileID: 11400000, guid: fa26f2054cafc674eb9c6f5ee6342e58, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: -9, y: 0, z: -10}
+  - character: {fileID: 11400000, guid: f647d75fba3b9ea4f9a9f2b22edae8f3, type: 2}
+    destination: 1
+    playerGuessDestination: 2
+    spawnPosition: {x: -1, y: 0, z: -17}
+  - character: {fileID: 11400000, guid: 1b065f3e72b5bb74caef5b6298dc8a25, type: 2}
+    destination: 1
+    playerGuessDestination: 2
+    spawnPosition: {x: 9.5, y: 0, z: -17}
+  - character: {fileID: 11400000, guid: 3853ead7629e0384f9dbe925da2fd023, type: 2}
+    destination: 0
+    playerGuessDestination: 2
+    spawnPosition: {x: 17, y: 0, z: -13}
+  - character: {fileID: 11400000, guid: 6cb516dd285949e46a8173ee7da5410f, type: 2}
+    destination: 1
+    playerGuessDestination: 2
+    spawnPosition: {x: 17, y: 0, z: -1}

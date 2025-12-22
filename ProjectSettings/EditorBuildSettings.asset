@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LibaryWalkableRecovered2.unity
     guid: f6204cb642c26e14ba3a82ddb1f7c432
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: cc586f2560cddf64491365f602ffc9b7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
